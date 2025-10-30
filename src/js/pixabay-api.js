@@ -11,11 +11,12 @@ export function getImagesByQuery(query) {
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: true,
+      per_page: 21,
     },
   })
     .then(({ data }) => data)
     .catch(error => {
       console.error('Error fetching images:', error);
-      throw error; // щоб обробити помилку в main.js
+      throw error;
     });
 }

@@ -4,17 +4,23 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
 
-// створюємо екземпляр SimpleLightbox
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
 
-// створення розмітки для галереї
 export function createGallery(images) {
   const markup = images
     .map(
-      ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => `
       <li class="gallery-item">
         <a href="${largeImageURL}">
           <img src="${webformatURL}" alt="${tags}" loading="lazy" />
@@ -42,7 +48,7 @@ export function createGallery(images) {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', markup);
-  lightbox.refresh(); // 🔹 обов’язково оновлюємо після вставки
+  lightbox.refresh();
 }
 
 export function clearGallery() {
