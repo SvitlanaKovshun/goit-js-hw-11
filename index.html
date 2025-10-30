@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,10 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <script type="module" crossorigin src="/goit-js-hw-11/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-DvPDDfy5.css">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-CI2P6j_B.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-CWKLx11g.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/index-BhfoY4vB.css">
   </head>
   <body>
-    <main></main>
+    <main>
+      <div class="container">
+        <!-- форма -->
+        <form class="form">
+          <label>
+            <input
+              class="input"
+              type="text"
+              name="search-text"
+              placeholder="Search images..."
+              required
+            />
+          </label>
+          <button class="button" type="submit">Search</button>
+        </form>
+
+        <!-- Лоадер -->
+        <div class="loader-container"><span class="loader hidden"></span></div>
+
+        <!-- Контейнер для картки -->
+        <ul class="gallery" id="gallery"></ul>
+      </div>
+    </main>
 
   </body>
 </html>
